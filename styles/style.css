@@ -16,3 +16,6 @@ img{
 p{
    padding: 2px 15px;
 }
+.done { text-decoration: line-through; }
+.fade-enter-active, .fade-leave-active { transition: opacity .5s }
+.fade-enter, .fade-leave-to { opacity: 0 }
