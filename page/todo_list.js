@@ -38,6 +38,12 @@ const app = new Vue({
             this.saveTodo();
         },
 
+        defaultTODO : function(){
+            this.items.splice(0, this.items.length);
+            this.items.push(...defaultItems);
+            this.saveTodo();
+        },
+
         saveTodo: function(){
             localStorage.setItem( 'items', JSON.stringify(this.items) );
         },

@@ -1,5 +1,5 @@
 html{
-   background-color: whitesmoke;
+   background-color: lightgreen;
 }
 
 h1{
@@ -8,14 +8,32 @@ h1{
    margin-bottom: 20px;
    border-bottom: thin solid;
 }
+
 img{
    width: 600px;
    display: block;
    margin: 0 auto;
 }
+
 p{
    padding: 2px 15px;
 }
+
 .done { text-decoration: line-through; }
-.fade-enter-active, .fade-leave-active { transition: opacity .5s }
-.fade-enter, .fade-leave-to { opacity: 0 }
+
+.list-complite-item{ transition: all 1s;}
+.list-complite-enter, .list-complite-leave-to
+   /*.list-complete-leave-active for below version 2.1.8*/{
+   opacity: 0;
+   transform: translateX(30px);
+}
+.list-complite-leave-active{ position: absolute;}
+
+
+text{
+   background-color: lightsalmon;
+}
+
+button{
+   background-color: lightgray;
+}
