@@ -14,12 +14,13 @@
             テーブルで表示する簡単なページです。</p>
         <table border="1">
             <tr>
-                <th>会社名</th><th>路線名/優等列車</th><th>ソース元</th>
+                <th>会社名</th><th>路線名/優等列車</th><th>ソース元</th><th></th>
             </tr>
             <tr v-for="data in datalists">
                 <td>{{ data.company }}</td><td>{{ data.name }}</td><td>{{ data.source }}</td>
+                <td><button v-on:click="shareTwitter( data.company , data.name )">共有</button></td>
             </tr>
-        </table>
+        </table>    
     </div>
     <script src = "./get_delay_json.js"></script>
     <p><a href="../index.html">戻る</a></p> 
