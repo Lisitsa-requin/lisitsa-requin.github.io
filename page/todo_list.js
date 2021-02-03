@@ -33,14 +33,14 @@ const app = new Vue({
 
         deleteTodo : function(){
             this.items = this.items.filter(function(items){
-                return items.isChecked === false;
+                return items.isChecked === false;   //チェックボックスにONがされていなかったらそのままリストに格納
             });
             this.saveTodo();
         },
 
         defaultTODO : function(){
-            this.items.splice(0, this.items.length);
-            this.items.push(...defaultItems);
+            this.items.splice(0, this.items.length);    //リストの初期化
+            this.items.push(...defaultItems);           //defaultItemsをitemsに格納
             this.saveTodo();
         },
 

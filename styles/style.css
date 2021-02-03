@@ -1,5 +1,5 @@
 html{
-   background-color: lightgreen;
+   background-color: whitesmoke;
 }
 
 h1{
@@ -35,5 +35,9 @@ text{
 }
 
 button{
-   background-color: lightgray;
+   background-color: lightcyan;
 }
+
+.my-skyblue{ color: skyblue;}
+
+.github{ color: black;}
