@@ -15,20 +15,23 @@
             またチェックしたTODOは削除ボタンを押すと削除することができます。</p>
         <div id="app">
 
-                <transition-group v-if="items.length > 0" name="list-complite" tag="ul">
-                    <li v-for="item in items" v-bind:key="item" class="list-complite-item">
-                        <label v-bind:class="{ done: item.isChecked }">
-                            <input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo">{{ item.title }}
-                        </label>
-                    </li>
-                </transition-group>
-                <p v-else class="list-complite-item">TODOがありません</p>
+           <transition-group v-if="items.length > 0" name="list-complite" tag="ul">
+                <li v-for="item in items" v-bind:key="item" class="list-complite-item">
+                    <label v-bind:class="{ done: item.isChecked }">
+                        <input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo">{{ item.title }}
+                    </label>
+                </li>
+            </transition-group>
+            <p v-else class="list-complite-item">TODOがありません</p>
 
-            <input type="text" placeholder="追加したいTODOを入力しよう" v-model="inputting"></input><br>
+            <input type="text" placeholder="追加したいTODOを入力しよう" v-model="inputting"></input>
             <button v-on:click="addTodo(inputting)">Add TODO</button><br>
-            <button v-on:click="defaultTODO()">Default TODO</button><br>
-            <!--チェック済みのものをチェックリストから削除-->
-            <button v-on:click="deleteTodo()" v-on:click="show = !show">チェック済みの項目を削除する</button>
+            <div class="inline-block">
+                <button v-on:click="defaultTODO()">Default TODO</button>
+                <!--チェック済みのものをチェックリストから削除-->
+                <button v-on:click="deleteTodo()" v-on:click="show = !show">チェック済みの項目を削除する</button>
+            </div>
+        
         </div>
 
         <script src = "./todo_list.js"></script> 

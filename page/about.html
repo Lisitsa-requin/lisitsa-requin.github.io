@@ -4,24 +4,29 @@
         <meta charset="UTF-8">
         <title>Who's requin</title>
         <link href="../styles/style.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
 
     <body>
-        <h1>きみはだれ</h1>
-        <table>
-            <tr>
-                <th>名前</th><td>るかん(Requin)</td>
-            </tr>
-            <tr>
-                <th>生年月日</th><td>1998年9月28日</td>
-            </tr>
-            <tr>
-                <th>出身地</th><td>神奈川県</td>
-            </tr>
-            <tr>
-                <th>趣味</th><td>プログラミング<br>軽いジャンク修理<br>ネットサーフィン</td>
-            </tr>
-        </table>
+        <div id="about">
+            <h1>きみはだれ</h1>
+            <table>
+                <tr>
+                    <th>名前</th><td>るかん(Requin)</td>
+                </tr>
+                <tr>
+                    <th>生年月日</th><td>1998年9月28日({{ Age }})</td>
+                </tr>
+                <tr>
+                    <th>出身地</th><td>神奈川県</td>
+                </tr>
+                <tr>
+                    <th>趣味</th><td>プログラミング<br>軽いジャンク修理<br>ネットサーフィン</td>
+                </tr>
+            </table>
+        </div>
+        
+        <script src = "./about.js"></script>
 
         <p>中学時代に某ゲーム製作ツールのスクリプトにRubyが使われていることを知り、プログラミングに興味を持つ。また同時期に、地理の分野に興味を持ち
             Wikipediaなどで調べていたところ、国鉄時代の北海道には今よりも多く路線が引かれていたことを知り、同じように鉄道に興味を持つ。</p>
