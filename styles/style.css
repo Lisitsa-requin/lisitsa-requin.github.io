@@ -23,13 +23,16 @@ p{
 }
 .list-complite-leave-active{ position: absolute;}
 
+ul{
+   list-style-type: none;
+}
 
 text{
    background-color: lightsalmon;
 }
 
 button{
-   background-color: lightcyan;
+   background-color: lightgray;
 }
 
 .text-center{

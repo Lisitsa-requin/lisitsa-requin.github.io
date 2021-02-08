@@ -14,7 +14,7 @@ const app = new Vue({
         show: true,
     },
     
-    created(){
+    mounted(){
         this.loadTodo();
     },
 
@@ -50,11 +50,14 @@ const app = new Vue({
 
         loadTodo: function(){
             const i = JSON.parse( localStorage.getItem('items') );
+            this.items = i;
+            /*
             console.log(i);
             if( i.length == 0 ){
                 this.items.push(...defaultItems);
             }else{ this.items = i; }
             console.log(this.items)
+            */
         },
         
     },

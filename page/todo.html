@@ -9,23 +9,20 @@
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
     <body>
         <p>TODOリストです。チェックボックスをつけるとその作業は完了したものとみなし、作業内容に打ち消し線が引かれます。
-            ページのリロードを行った際でもTODOリストがリセットされないようになっており、TODOリストが空になった際には
-            デフォルトの作業内容がリストに表示されるようになります。</p>
+            ページのリロードを行った際でもTODOリストがリセットされないようになっており、TODOリストが空になった際にはTODOが無いという表記に変わります。
+            また、試験的にTODO追加時や削除にアニメーションがつくようになりました。</p>
         <p>追加したい作業があればテキストボックスに入力し、Add TODOボタンを入力すると追加することができます。
             またチェックしたTODOは削除ボタンを押すと削除することができます。</p>
         <div id="app">
-            
-                <!--アイテムを反復的にテーブルに表示-->
-                <table>
-                    <tr>
-                        <th></th><th>作業内容</th>
-                    </tr>
-                    <tr v-for="item in items" v-bind:key="item" v-bind:class="{ done: item.isChecked }" class="list-complite-item">
-                        <td><input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo"></td>
-                        <td>{{ item.title }}</td>
-                    </tr>
-                </table>
-            
+
+                <transition-group v-if="items.length > 0" name="list-complite" tag="ul">
+                    <li v-for="item in items" v-bind:key="item" class="list-complite-item">
+                        <label v-bind:class="{ done: item.isChecked }">
+                            <input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo">{{ item.title }}
+                        </label>
+                    </li>
+                </transition-group>
+                <p v-else class="list-complite-item">TODOがありません</p>
 
             <input type="text" placeholder="追加したいTODOを入力しよう" v-model="inputting"></input><br>
             <button v-on:click="addTodo(inputting)">Add TODO</button><br>
