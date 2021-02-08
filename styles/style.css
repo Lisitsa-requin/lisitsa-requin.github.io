@@ -32,6 +32,10 @@ button{
    background-color: lightcyan;
 }
 
+.text-center{
+   text-align: center;
+}
+
 .my-skyblue{ color: skyblue;}
 
 .github{ color: black;}

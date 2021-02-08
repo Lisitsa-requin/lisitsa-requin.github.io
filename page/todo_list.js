@@ -14,7 +14,7 @@ const app = new Vue({
         show: true,
     },
     
-    mounted(){
+    created(){
         this.loadTodo();
     },
 

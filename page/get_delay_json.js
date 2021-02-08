@@ -12,6 +12,7 @@ const vue = new Vue({
         .catch(error =>{
             console.log(error);
         });
+        console.log(this.datalists);
     },
 
     methods : {
