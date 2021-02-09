@@ -37,7 +37,6 @@ const clock = new Vue({
         modeChange: function(){
             this.clockMode = !this.clockMode;
             if(this.active){
-                this.timerReset();
                 this.stopTime();
             }
         },
