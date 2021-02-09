@@ -10,9 +10,14 @@
         <h1>サメ時計</h1>
         <div id="clock">
             <div>
-                <p class="text-center">{{ date }}</p>
-                <p class="text-center">{{ time }}</p>
+                <p v-if="clockMode" class="text-center">{{ date }}</p>
+                <p v-if="clockMode" class="text-center">{{ time }}</p>
+                <p v-if="!clockMode" class="text-center">{{ interval.toFixed(3) }}</p>
+                <button v-if="!clockMode" v-show="!active" v-on:click="timerStart()">Start</button>
+                <button v-if="!clockMode" v-show="active" v-on:click="timerStop()">Stop</button>
+                <button v-if="!clockMode" v-on:click="timerReset()">Reset</button>
             </div>
+            <button v-on:click="modeChange()">Mode Change</button>
         </div>
         <script src = "./clock.js"></script>
         <p><a href="../index.html">戻る</a></p> 
