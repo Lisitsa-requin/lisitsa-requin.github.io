@@ -1,7 +1,7 @@
 const about = new Vue({
     el: '#about',
     data:{ 
-        Age: "",
+        Age: '',
         birthday: new Date('1998-09-28'),
     },
 
