@@ -55,3 +55,11 @@ button{
    color: black;
    text-decoration: none;
 }
+
+.timer-enter,.timer-leave-to{
+   opacity: 0;
+   transform: translateY(50px)
+}
+.timer-enter-active, .timer-leave-active{
+   transition: opacity 500ms;
+}

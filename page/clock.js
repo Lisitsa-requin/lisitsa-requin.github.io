@@ -36,7 +36,7 @@ const clock = new Vue({
 
         modeChange: function(){
             this.clockMode = !this.clockMode;
-            if(this.active){
+            if(this.active){    //ストップウォッチ動作中のときは一時停止する
                 this.stopTime();
             }
         },
