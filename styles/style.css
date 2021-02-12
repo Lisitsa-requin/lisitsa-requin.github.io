@@ -60,6 +60,11 @@ button{
    opacity: 0;
    transform: translateY(50px)
 }
-.timer-enter-active, .timer-leave-active{
-   transition: opacity 500ms;
+
+.timer-enter-to,.timer-leave{
+   opacity: 1;
+}
+
+.timer-enter-active,.timer-leave-active{
+   transition: all 1s;
 }
