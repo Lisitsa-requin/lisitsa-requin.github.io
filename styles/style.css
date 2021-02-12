@@ -57,8 +57,8 @@ button{
 }
 
 .timer-enter,.timer-leave-to{
+   transform: translateY(50px);
    opacity: 0;
-   transform: translateY(50px)
 }
 
 .timer-enter-to,.timer-leave{
@@ -66,5 +66,5 @@ button{
 }
 
 .timer-enter-active,.timer-leave-active{
-   transition: all 1s;
+   transition: all .1s;
 }
