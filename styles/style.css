@@ -56,15 +56,20 @@ button{
    text-decoration: none;
 }
 
-.timer-enter,.timer-leave-to{
-   transform: translateY(50px);
+.timer-enter{
    opacity: 0;
 }
 
-.timer-enter-to,.timer-leave{
-   opacity: 1;
+.timer-leave-to{
+   transform: translateX(50px);
+   transition: all .10s ease;
+   opacity: 0;
 }
 
-.timer-enter-active,.timer-leave-active{
-   transition: all .1s;
+.timer-enter-active{
+   transition: all .10s ease;
+}
+
+.timer-leave-active{
+   transition: all .10s ease-in;
 }
