@@ -15,20 +15,19 @@
             またチェックしたTODOは削除ボタンを押すと削除することができます。</p>
         <div id="app">
 
-            <transition-group v-if="items.length > 0" name="list-complite" tag="ul">
+            <transition-group name="list-complite" tag="ul" mode="out-in">
                 
                 <li v-for="item in items" v-bind:key="item" class="list-complite-item">
                     <label v-bind:class="{ done: item.isChecked }">
                         <input type="checkbox" v-model="item.isChecked" v-on:change="saveTodo">{{ item.title }}
                     </label>
                 </li>
+                <li v-if="items.length == 0" key="nothing" class="list-complite-item">
+                    <p class="list-complite-nothing">TODOがありません</p>
+                </li>
 
             </transition-group>
 
-            <transition appear v-else name="list-complite" mode="in-out">
-                <p v-bind:key="todo_nothing" class="list-complite-item">TODOがありません</p>
-            </transition>
-            
             <span>
                 <!--チェック済みのものをチェックリストから削除-->
                 <button v-on:click="deleteTodo()">チェック済みの項目を削除する</button><br>

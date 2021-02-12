@@ -23,6 +23,8 @@ p{
 }
 .list-complite-leave-active{ position: absolute;}
 
+.list-complite-nothing{transition: all 0.5s;}
+
 ul{
    list-style-type: none;
 }
