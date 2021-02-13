@@ -75,3 +75,8 @@ button{
 .timer-leave-active{
    transition: all .10s ease-in;
 }
+.clock-font{
+   text-align: center;
+   padding: 10px;
+   font-size: x-large;
+}
