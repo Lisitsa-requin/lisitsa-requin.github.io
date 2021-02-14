@@ -14,14 +14,15 @@ const app = new Vue({
         show: true,
     },
     
-    mounted(){
+    //mounted()にするとTODOが無い状態が見えてしまうのでcreated()に
+    created(){
         this.loadTodo();
     },
 
     methods: {
 
         addTodo : function(){
-            if(this.inputting){
+            if(this.inputting){             //inputtingに値が入っているなら処理をする
                 this.items.push({
                     title: this.inputting,
                     isChecked: false

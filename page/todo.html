@@ -15,7 +15,7 @@
             またチェックしたTODOは削除ボタンを押すと削除することができます。</p>
         <div id="app">
 
-            <transition-group name="list-complite" tag="ul" mode="out-in">
+            <transition-group name="list-complite" tag="ul">
                 
                 <li v-for="item in items" v-bind:key="item" class="list-complite-item">
                     <label v-bind:class="{ done: item.isChecked }">
