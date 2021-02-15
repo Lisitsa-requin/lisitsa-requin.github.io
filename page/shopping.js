@@ -35,6 +35,9 @@ const app = new Vue({
             },{})
         },
         computedTodo: function(){
+            if(this.lists == null){
+                this.lists = [{id: 0,context: "サメのぬいぐるみ",budget: 3200,state: 0}];
+            }
             if(this.lists.length > 0){
                 return this.lists.filter(function(el){
                     return this.current < 0 ? true : this.current === el.state
