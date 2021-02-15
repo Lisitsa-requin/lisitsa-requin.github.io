@@ -3,10 +3,10 @@ const app = new Vue({
     data:{
         
         lists: [
-            {id: 0,
-            context: "サメのぬいぐるみ",
-            budget: 3200,
-            state: 0}
+            {id: Int32Array,
+            context: String,
+            budget: Int32Array,
+            state: Int8Array}
         ],
         inputting: '',
         number: 0,
