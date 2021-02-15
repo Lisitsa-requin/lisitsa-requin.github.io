@@ -3,10 +3,10 @@ const app = new Vue({
     data:{
         
         lists: [
-            {id: Int32Array,
-            context: String,
-            budget: Int32Array,
-            state: Int8Array}
+            {id: 0,
+            context: "サメのぬいぐるみ",
+            budget: 3200,
+            state: 0}
         ],
         inputting: '',
         number: 0,
@@ -25,7 +25,6 @@ const app = new Vue({
     mounted() {
         if(this.lists == null){
             console.log("listsがnull");
-            this.lists=[{id:0,context:"サメのぬいぐるみ",budget:3200,state:"false"}]
         }
     },
 
