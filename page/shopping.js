@@ -36,7 +36,8 @@ const app = new Vue({
         },
         computedTodo: function(){
             if(this.lists == null){
-                this.lists = [{id: 0,context: "サメのぬいぐるみ",budget: 3200,state: 0}];
+                this.lists = [{id: 0,context: "a",budget: 0,state: 0}];
+                this.items.splice(0, this.items.length);    //リストの初期化
             }
             if(this.lists.length > 0){
                 return this.lists.filter(function(el){
