@@ -61,8 +61,9 @@ const app = new Vue({
 
         loadTodo: function(){
             const i = JSON.parse( localStorage.getItem('items') );
+            console.log(i);
             this.items = i;
-            /*
+            /*以下のコードは以前に動いていた処理
             console.log(i);
             if( i.length == 0 ){
                 this.items.push(...defaultItems);
