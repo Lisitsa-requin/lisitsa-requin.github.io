@@ -9,7 +9,10 @@ const defaultItems = [
 const app = new Vue({
     el: '#app',
     data: {
-        items: [],
+        items: [
+            {title: String,
+            isChecked: Boolean,
+        }],
         inputting: '',
         show: true,
     },
@@ -17,6 +20,13 @@ const app = new Vue({
     //mounted()にするとTODOが無い状態が見えてしまうのでcreated()に
     created(){
         this.loadTodo();
+    },
+
+    mounted() {
+        if(this.items == null){
+            this.items = [{title:'',isChecked: false}];
+            this.defaultTODO();
+        }
     },
 
     methods: {

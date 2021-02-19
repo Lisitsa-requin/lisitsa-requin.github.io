@@ -24,7 +24,8 @@ const app = new Vue({
 
     mounted() {
         if(this.lists == null){
-            console.log("listsがnull");
+            this.lists = [{id: 0,context: "a",budget: 0,state: 0}];
+            this.deleteTodo(0);
         }
     },
 
@@ -35,10 +36,6 @@ const app = new Vue({
             },{})
         },
         computedTodo: function(){
-            if(this.lists == null){
-                this.lists = [{id: 0,context: "a",budget: 0,state: 0}];
-                this.items.splice(0, this.items.length);    //リストの初期化
-            }
             if(this.lists.length > 0){
                 return this.lists.filter(function(el){
                     return this.current < 0 ? true : this.current === el.state
