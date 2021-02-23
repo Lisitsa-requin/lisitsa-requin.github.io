@@ -28,6 +28,7 @@
                         <th class="button">-</th>
                     </tr>
                 </thead>
+                <!--isタグでアニメーションがつくようになる-->
                 <tbody name="list-complite" is="transition-group" tag="p">
                     <tr v-for="item in computedTodo" v-bind:key="item.id" class="list-complite-item">
                         <th>{{ item.id }}</th>
@@ -38,28 +39,6 @@
                     </tr>
                 </tbody>
             </table>
-            <!--
-            <table>
-                <thead>
-                    <tr>
-                        <th class="id">ID</th>
-                        <th class="context">買う物</th>
-                        <th class="budget">予算</th>
-                        <th class="state">状態</th>
-                        <th class="button">-</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="item in computedTodo" v-bind:key="item.id">
-                        <th>{{ item.id }}</th>
-                        <td>{{ item.context }}</td>
-                        <td>{{ item.budget }}円</td>
-                        <td><button v-on:click="changeState(item)">{{ labels[item.state] }}</td>
-                        <td><button v-on:click="deleteTodo(item)">削除</button></td>
-                    </tr>
-                </tbody>
-            </table>
-            -->
             <h2>新しく買う物を追加</h2>
             <div class="inline-block">
                 商品:<input type="text" placeholder="例:サメのぬいぐるみ" v-model="inputting">
