@@ -80,3 +80,13 @@ button{
    padding: 10px;
    font-size: x-large;
 }
+
+thead th {
+   border-bottom: 2px solid lightskyblue; /*#d31c4a */
+   color: lightskyblue;
+   text-align:justify;
+ }
+
+ tbody th td{
+    text-align: left;
+ }
