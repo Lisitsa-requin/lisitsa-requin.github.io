@@ -53,6 +53,12 @@ button{
    padding: 10px;
 }
 
+.inline-character{
+   text-align: center;
+   display: inline-block;
+   padding: 2px;
+}
+
 .link-dark{
    color: black;
    text-decoration: none;
