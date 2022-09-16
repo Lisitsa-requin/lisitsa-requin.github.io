@@ -1,4 +1,4 @@
-const app = new Vue({
+const shopping_list = new Vue({
     el: "#app",
     data:{
         
@@ -26,8 +26,8 @@ const app = new Vue({
     mounted() {
         console.log(this.lists);
         //nullであればlistsをリストとして認識させる
-        if(this.lists == null){
-            this.lists = [{id: 0,context: "a",budget: 0,state: 0}];
+        if(this.lists.length == 0){
+            this.addTodo("a", 1);
             this.deleteTodo(0);
         }
     },
@@ -39,14 +39,14 @@ const app = new Vue({
                 return Object.assign(a, {[b.value]: b.label})
             },{})
         },
+        
         computedTodo: function(){
-            //リストが空ではないとき
             if(this.lists.length > 0){
                 return this.lists.filter(function(el){
                     //0未満で無ければthis.currentの値に応じて表示するアイテムを選別する
                     //0なら"未購入"、1なら"購入済"
                     return this.current < 0 ? true : this.current === el.state
-                },this)
+                }, this)
             }
         }
     },
@@ -65,6 +65,7 @@ const app = new Vue({
                 });
                 this.inputting = '';
                 this.number = 0;
+                console.log(this.lists);
                 this.saveTodo();
             }
         },
@@ -78,12 +79,12 @@ const app = new Vue({
         deleteTodo: function(item){
             //アイテムのidを渡して削除
             var index = this.lists.indexOf(item);
-            this.lists.splice(index,1);
+            this.lists.splice(index, 1);
             this.saveTodo();
         },
         
         saveTodo: function(){
-            localStorage.setItem('todo',JSON.stringify(this.lists));
+            localStorage.setItem('todo', JSON.stringify(this.lists));
         },
 
         loadTodo: function(){
