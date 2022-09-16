@@ -92,5 +92,15 @@ const shopping_list = new Vue({
             this.lists = i;
         },
 
+        isNotEmptyList: function(){
+            if(this.lists.length > 0){
+                console.log("Not Empty");
+                return true
+            } else {
+                console.log("Is Empty");
+                return false
+            }
+        }
+
     },
 })
