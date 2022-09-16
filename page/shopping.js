@@ -27,8 +27,7 @@ const shopping_list = new Vue({
         console.log(this.lists);
         //nullであればlistsをリストとして認識させる
         if(this.lists.length == 0){
-            this.addTodo("a", 1);
-            this.deleteTodo(0);
+            this.addTodo("i", 0);
         }
     },
 
