@@ -14,41 +14,49 @@
         
         <div id="app">
 
-            <label v-for="label in statement">
-                <input type="radio" v-model="current" v-bind:value="label.value">{{ label.label }}
-            </label>
-
-            ({{ computedTodo.length }}件がヒットしました)
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>買う物</th>
-                        <th>予算</th>
-                        <th>状態</th>
-                        <th>-</th>
-                    </tr>
-                </thead>
-                <!--isタグでアニメーションがつくようになる-->
-                <tbody name="list-complite" is="transition-group" tag="p">
-                    <tr v-for="item in computedTodo" v-bind:key="item.id" class="list-complite-item">
-                        <th>{{ item.id }}</th>
-                        <td>{{ item.context }}</td>
-                        <td>{{ item.budget }}円</td>
-                        <td><button v-on:click="changeState(item)">{{ labels[item.state] }}</td>
-                        <td><button v-on:click="deleteTodo(item)">削除</button></td>
-                    </tr>
-                </tbody>
-            </table>
             <h2>新しく買う物を追加</h2>
             <div class="inline-block">
                 商品:<input type="text" placeholder="例:サメのぬいぐるみ" v-model="inputting">
                 予算:<input type="number" v-model="number">
                 <br><button v-on:click="addTodo(inputting,number)">Add</button>
             </div>
-        </div>
+            
+            <label v-for="label in statement">
+                <input type="radio" v-model="current" v-bind:value="label.value">{{ label.label }}
+            </label>
 
+            ({{ computedTodo.length }}件がヒットしました)
+
+            <div v-if="items.length == 0" v-bind:key="nothing" class="list-complite-item">
+                <p class="list-complite-nothing">欲しいものが0件です</p>
+            </div>
+            
+            <div v-else>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>買う物</th>
+                            <th>予算</th>
+                            <th>状態</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+                    <!--isタグでアニメーションがつくようになる-->
+                    <tbody name="list-complite" is="transition-group" tag="p">
+                        <tr v-for="item in computedTodo" v-bind:key="item.id" class="list-complite-item">
+                            <th>{{ item.id }}</th>
+                            <td>{{ item.context }}</td>
+                            <td>{{ item.budget }}円</td>
+                            <td><button v-on:click="changeState(item)">{{ labels[item.state] }}</td>
+                            <td><button v-on:click="deleteTodo(item.id)">削除</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        
         <script src = "./shopping.js"></script> 
         <p><a href="../index.html">戻る</a></p> 
 
