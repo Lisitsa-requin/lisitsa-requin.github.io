@@ -14,6 +14,7 @@ const shopping_list = new Vue({
             {value: -1, label: 'すべて'},
             {value: 0, label: '未購入'},
             {value: 1, label: '購入済'},
+            {value: 2, label: 'ダミー'}
         ],
         current: -1,
     },
