@@ -14,6 +14,7 @@ const shopping_list = new Vue({
             {value: -1, label: 'すべて'},
             {value: 0, label: '未購入'},
             {value: 1, label: '購入済'},
+            {value: 2, label: 'ダミー'}
         ],
         current: -1,
     },
@@ -27,8 +28,7 @@ const shopping_list = new Vue({
         console.log(this.lists);
         //nullであればlistsをリストとして認識させる
         if(this.lists.length == 0){
-            this.addTodo("a", 1);
-            this.deleteTodo(0);
+            this.addTodo("i", 0);
         }
     },
 
@@ -92,6 +92,16 @@ const shopping_list = new Vue({
             console.log(i);
             this.lists = i;
         },
+
+        isNotEmptyList: function(){
+            if(this.lists.length > 0){
+                console.log("Not Empty");
+                return true
+            } else {
+                console.log("Is Empty");
+                return false
+            }
+        }
 
     },
 })

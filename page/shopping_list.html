@@ -26,34 +26,31 @@
             </label>
 
             ({{ computedTodo.length }}件がヒットしました)
-
-            <div v-if="items.length == 0" v-bind:key="nothing" class="list-complite-item">
-                <p class="list-complite-nothing">欲しいものが0件です</p>
-            </div>
             
-            <div v-else>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>買う物</th>
-                            <th>予算</th>
-                            <th>状態</th>
-                            <th>-</th>
-                        </tr>
-                    </thead>
-                    <!--isタグでアニメーションがつくようになる-->
-                    <tbody name="list-complite" is="transition-group" tag="p">
-                        <tr v-for="item in computedTodo" v-bind:key="item.id" class="list-complite-item">
-                            <th>{{ item.id }}</th>
-                            <td>{{ item.context }}</td>
-                            <td>{{ item.budget }}円</td>
-                            <td><button v-on:click="changeState(item)">{{ labels[item.state] }}</td>
-                            <td><button v-on:click="deleteTodo(item.id)">削除</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table v-if="isNotEmptyList()">
+                
+                <tr>
+                    <th>ID</th>
+                    <th>買う物</th>
+                    <th>予算</th>
+                    <th>状態</th>
+                    <th>-</th>
+                </tr>
+                
+                <!--isタグでアニメーションがつくようになる-->
+                <tbody name="list-complite" is="transition-group" tag="p">
+                    <tr v-for="item in computedTodo" v-bind:key="item.id" class="list-complite-item">
+                        <td v-if="item.id != 0">{{ item.id }}</td>
+                        <td v-if="item.id != 0">{{ item.context }}</td>
+                        <td v-if="item.id != 0">{{ item.budget }}円</td>
+                        <td v-if="item.id != 0"><button v-on:click="changeState(item)">{{ labels[item.state] }}</td>
+                        <td v-if="item.id != 0"><button v-on:click="deleteTodo(item.id)">削除</button></td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        
+            <p v-else>リストが空です</p>
 
         </div>
         
